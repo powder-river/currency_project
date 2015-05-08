@@ -7,6 +7,15 @@ class Currency
     @amount = amount
   end
 
+  def equals
+
+  @amount == @amount
+
+  end
+
+  def == (other)
+    equals == other
+  end
 
 
 end
