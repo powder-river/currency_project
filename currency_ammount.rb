@@ -2,7 +2,6 @@ class  CurrencyDenominationError < StandardError
 end
 
 class Currency
-
   attr_reader :code, :amount
 
   def initialize (code, amount)
@@ -10,43 +9,40 @@ class Currency
     @amount = amount
   end
 
-#lines 11-14 checks that currency objects with same
+#checks that currency objects with same
 # currncy ammount and codes are equal
   def ==(currency)
     code == currency.code &&
     amount == currency.amount
   end
 
-#lines 20-28 establishes the !equals but again not sure if I did this correct
+#adds together currency amounts
   def + (currency)
     if code == currency.code
-
       Currency.new(code, amount + currency.amount)
     else
-      raise CurrencyDenominationError
-        puts "Currency must match to add"
+      raise CurrencyDenominationError, "Currency Denominations must match to add"
+
     end
-
-
   end
 
+#subtracts currency amounts
   def - (currency)
     if code == currency.code
        Currency.new(code, amount - currency.amount)
-
     else
-      puts "screw you, not possible"
+      raise CurrencyDenominationError, "Currency Denominations must match to subtract"
     end
   end
 
+#multiplies currency amounts
   def * (currency)
     if code == currency.code
       Currency.new(code, amount * currency.amount)
     else
-      "screw you, not possible"
+      raise CurrencyDenominationError "Currency Denominations must match to multiply"
     end
   end
-
 
 
 end
