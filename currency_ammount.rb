@@ -1,11 +1,12 @@
 #yes i know I this is a typo but I already created a git
-class Currency_Ammount
-  def initialize (currency_name)
-    @currency_name = currency_name
+class Currency
+  attr_reader :name, :amount
+
+  def initialize (name, amount)
+    @name = name
+    @amount = amount
   end
 
-  def currency_name
-    @currency_name
-  end
+
 
 end

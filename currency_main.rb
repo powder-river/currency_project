@@ -1,9 +1,8 @@
-require "./currency_converter.rb"
+#require "./currency_converter.rb"
 require "./currency_ammount.rb"
 
-american_dollar = Currency_Ammount.new("USD")
-us_conversian_rate = Converter.new([:USD])
+usd = Currency.new("USD", 1)
+#us_conversian_rate = Converter.new([:USD])
 
-puts american_dollar.currency_name
-
-puts us_conversian_rate.rates
+puts usd.name
+puts usd.amount
