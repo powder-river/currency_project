@@ -11,9 +11,8 @@ class Currency
 
 #checks that currency objects with same
 # currncy ammount and codes are equal
-  def ==(currency)
-    code == currency.code &&
-    amount == currency.amount
+  def == (currency)
+    code == currency.code && amount == currency.amount
   end
 
 #adds together currency amounts
