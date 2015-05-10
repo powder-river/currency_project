@@ -10,7 +10,7 @@ class Currency
   end
 
 #checks that currency objects with same
-# currncy ammount and codes are equal
+# currency ammount and codes are equal
   def == (currency)
     code == currency.code && amount == currency.amount
   end
@@ -21,7 +21,6 @@ class Currency
       Currency.new(code, amount + currency.amount)
     else
       raise CurrencyDenominationError, "Currency Denominations must match to add"
-
     end
   end
 
